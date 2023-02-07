@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Login.css';
+import 'bootstrap/dist/css/bootstrap.min.css'
 function Login() {
   return (
     <div className='containerPrincipal'>
