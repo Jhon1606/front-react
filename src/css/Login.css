@@ -1,13 +1,10 @@
 
-.containerPrincipal{
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    border: 1px solid red;
-    padding: 40px;
-    background-color: antiquewhite;
+body{
+    background: #1097E4;
+    background: linear-gradient(to right, #86C6EB, #1097E4);
 }
-.containerSecundario{
-    text-align: center;
+.bg{
+    background-image: url('../assets/img/imglogin2.jpg');
+    background-position: center center;
+    background-size:cover;
 }
