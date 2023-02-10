@@ -1,12 +1,20 @@
 import { Outlet } from "react-router-dom";
+import Sidebar from '../layouts/Sidebar'
+import Topbar from '../layouts/Topbar'
 
 function App() {
   return (
     <>
-      <h1>Header here</h1>
-      <Outlet/>
+      <div className="d-flex">
+        <div>
+          <Sidebar/>
+        </div>
+        <div className="w-100">
+          <Topbar/>
+          <Outlet/>
+        </div>
+      </div>
     </>
-    
   );
 }
 
