@@ -1,8 +1,8 @@
 
-body{
+/* body{
     background: #1097E4;
-    background: linear-gradient(to right, #86C6EB, #1097E4);
-}
+    background: linear-gradient(to right, #000, #fff);
+} */
 .bg{
     background-image: url('../assets/img/imglogin2.jpg');
     background-position: center center;
