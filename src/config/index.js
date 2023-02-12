@@ -13,3 +13,13 @@ export function requestBody(method, data = null){
 
     return paramas;
 }
+
+export function getRequest(){
+    const params = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+            Authentication: `Bearer ${ token }`,
+        }
+    };
+}

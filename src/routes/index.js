@@ -9,8 +9,7 @@ export const routes = createBrowserRouter([
     {
         path: '',
         element: <App/>,
-        errorElement: <Error404/>,
-        
+        errorElement: <Error404/>,     
         children: [
             {
                 index: true,
@@ -19,11 +18,11 @@ export const routes = createBrowserRouter([
             {
                 path: '/cursos',
                 element: <Cursos/>
+            },
+            {
+                path: '/login',
+                element: <Login/>
             }
-        ]
+        ],
     },
-    {
-        path: '/login',
-        element: <Login/>
-    }
 ]);
