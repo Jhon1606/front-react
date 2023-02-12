@@ -4,9 +4,7 @@ import Sidebar from "../layouts/Sidebar";
 import Topbar from "../layouts/Topbar";
 
 function App() {
-  const a = checkAuthToken();
-  a.then((data) => {console.log(data.authorization);
-    if (authorization === true) {
+  
       
       return (
         <>
@@ -23,16 +21,7 @@ function App() {
           </div>
         </>
       );
-    }else{
-      return(
-        <>
-          <h1>Inicia sesión</h1>
-        </>
-      );
-    }
-  });
-  console.log(a);
-}
+  };
 
 function AdminLayot() {}
 
