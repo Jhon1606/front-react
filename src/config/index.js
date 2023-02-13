@@ -7,7 +7,7 @@ export function requestBody(method, data = null){
         body: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",
-            Authentication: `Bearer ${ token }`,
+            Authorization: `Bearer ${ token }`,
         }
     };
 
@@ -19,7 +19,9 @@ export function getRequest(){
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            Authentication: `Bearer ${ token }`,
+            Authorization: `Bearer ${ token }`,
         }
     };
+
+    return params;
 }

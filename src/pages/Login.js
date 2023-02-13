@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { login } from '../api/auth';
+import { checkAuthToken, login } from '../api/auth';
 import {useForm} from '../hooks/useForm';
 
 import '../css/Login.css';
@@ -9,6 +9,12 @@ function Login() {
     const {form, changed} = useForm({});
     const [message, setMessage] = useState('');
     
+    checkAuthToken().then(data => {
+        if(data.authorization === true){
+            window.location.href = '/'
+        }
+      });
+
     const submitLoginForm = (e) => {
         e.preventDefault()
         login(form).then(data => {
