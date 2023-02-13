@@ -21,8 +21,6 @@ function App() {
   }else{
     window.location.href = '/login'
   }
-
-
 }
 
 function AdminLayot() {
