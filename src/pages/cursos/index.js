@@ -1,4 +1,5 @@
 import { useLoaderData } from "react-router-dom";
+import Create from "./create";
 
 export default function Index() {
 
@@ -6,6 +7,7 @@ export default function Index() {
 
   return (
     <>
+        <Create />
         <div className="table-responsive">
             <table className="table table-striped table-hover">
                 <thead>
