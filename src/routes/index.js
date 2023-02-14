@@ -5,6 +5,8 @@ import Login from "../pages/Login";
 import Home from "../pages/Home";
 import Index from "../pages/cursos";
 import { index } from "../api/cursos";
+import Create from "../pages/cursos/create";
+import IndexTeachers from "../pages/profesores";
 
 export const routes = createBrowserRouter([
     {
@@ -19,11 +21,32 @@ export const routes = createBrowserRouter([
             {
                 path: '/cursos',
                 element: <Index/>,
-                loader: index
+                loader: index,
+            },
+            {
+                path: '/cursos/crear',
+                element: <Create/>,
+                loader: index,
+            },
+            {
+                path: '/cursos/editar/:id',
+                element: <Create/>,
+                loader: index,
             },
             {
                 path: '/profesores',
-                element: <Index/>
+                element: <IndexTeachers/>,
+                // loader: IndexTeachers
+            },
+            {
+                path: '/profesores/crear',
+                element: <Create/>,
+                loader: index,
+            },
+            {
+                path: '/profesores/editar/:id',
+                element: <Create/>,
+                loader: index,
             },
             {
                 path: '/asignaciones',
