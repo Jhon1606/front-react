@@ -7,43 +7,41 @@ function Sidebar() {
   return (
     <>
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-            <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <Link to={'/'} className="sidebar-brand d-flex align-items-center justify-content-center">
                 <div className="sidebar-brand-icon rotate-n-15">
                     <i className="fas fa-laugh-wink"></i>
                 </div>
-                <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
-            </a>
+                <div className="sidebar-brand-text mx-3">ClassRoom</div>
+            </Link>
             
             <hr className="sidebar-divider my-0"/>
             
             <li className="nav-item active">
-                <a className="nav-link" href="index.html">
+                <Link to={'/'} className="nav-link">
                     <i className="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li>
-
-            <li className="nav-item">
-                <Link to={'/cursos'}>Cursos</Link>
+                    <span>Inicio</span>
+                </Link>
             </li>
             <li className="nav-item">
-                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduccion"
-                    aria-expanded="true" aria-controls="collapseProduccion">
-                    <i className="fas fa-fw fa-folder"></i>
+                <Link to={'/cursos'} className="nav-link">
+                    <i class="fa fa-book"></i>
+                    <span>Cursos</span>
+                </Link>           
+            </li>
+            <li className="nav-item">
+                <Link to={'/profesores'} className="nav-link">
+                    <i class="fa fa-user"></i>
                     <span>Profesores</span>
-                </a>           
+                </Link>           
             </li>
             <li className="nav-item">
-                <a className="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProduccion"
-                    aria-expanded="true" aria-controls="collapseProduccion">
-                    <i className="fas fa-fw fa-folder"></i>
+                <Link to={'/asignaciones'} className="nav-link">
+                    <i class="fa fa-paperclip"></i>
                     <span>Asignación</span>
-                </a>           
+                </Link>           
             </li>
 
-            <div className="text-center d-none d-md-inline">
-                <button className="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+            <button className="btn btn-danger m-2" type="button">Cerrar Sesión</button>
         </ul>
     </>
   )

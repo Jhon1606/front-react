@@ -3,7 +3,8 @@ import App from "../layouts/App";
 import Error404 from "../pages/Error404";
 import Login from "../pages/Login";
 import Home from "../pages/Home";
-import Cursos from "../pages/Cursos";
+import Index from "../pages/cursos";
+import { index } from "../api/cursos";
 
 export const routes = createBrowserRouter([
     {
@@ -17,7 +18,16 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/cursos',
-                element: <Cursos/>
+                element: <Index/>,
+                loader: index
+            },
+            {
+                path: '/profesores',
+                element: <Index/>
+            },
+            {
+                path: '/asignaciones',
+                element: <Index/>
             },
         ],
     },

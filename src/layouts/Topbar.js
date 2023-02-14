@@ -1,18 +1,12 @@
 import React from 'react'
 import '../css/Sb-admin-2.css'
 import '../css/Sb-admin-2.min.css'
-import UndrawProfile1 from '../assets/img/undraw_profile_1.svg'
-import UndrawProfile2 from '../assets/img/undraw_profile_2.svg'
-import UndrawProfile3 from '../assets/img/undraw_profile_3.svg'
-import UndrawProfile from '../assets/img/undraw_profile.svg'
-import UndrawRocket from '../assets/img/undraw_rocket.svg'
-import UndrawPosting from '../assets/img/undraw_posting_photo.svg'
 
 function Topbar() {
   return (
     <>
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-            <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+        <nav className="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+            {/* <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                 <i class="fa fa-bars"></i>
             </button>
 
@@ -195,7 +189,7 @@ function Topbar() {
                         </a>
                     </div>
                 </li>
-            </ul>
+            </ul> */}
         </nav>
     </>
   )

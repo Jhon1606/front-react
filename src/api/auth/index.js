@@ -1,9 +1,9 @@
-import { BASE_PATH, getRequest, requestBody } from "../../config"
+import { BASE_PATH, getRequest, sendRequest } from "../../config"
 
 export const login = async (data) => {
     const url = `${ BASE_PATH }/login`;
     
-    const params = requestBody("POST", data);
+    const params = sendRequest("POST", data);
     
     const response = await fetch(url, params);
     const result = await response.json();
@@ -29,7 +29,7 @@ export const checkAuthToken = async () => {
 
 export const logout = async () => {
     const url = `${ BASE_PATH }/logout`;
-    const params = requestBody("POST");
+    const params = sendRequest("POST");
 
     await fetch(url, params);
 
