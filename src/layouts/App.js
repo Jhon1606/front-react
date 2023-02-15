@@ -1,26 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import { checkAuthToken } from "../api/auth";
+import { token } from "../config";
 import Sidebar from "../layouts/Sidebar";
 import Topbar from "../layouts/Topbar";
+import { useNavigate } from "react-router-dom";
 
 function App() {
   
-  const [ auth, setAuth ] = useState(true);
+  let navigate = useNavigate();
 
-  checkAuthToken().then(data => {
-    if(data.authorization === true){
-      setAuth(true);
-    }else{
-      setAuth(false);
+  useEffect(() => {
+    if (!token){
+      return navigate("/login");
     }
-  });
+ });
 
-  if(auth === true){
-    return <AdminLayot />
-  }else{
-    window.location.href = '/login'
-  }
+ if(token){
+  return <AdminLayot />
+ }
+
+
+  // const [ auth, setAuth ] = useState(true);
+  // checkAuthToken().then(data => {
+  //   if(data.authorization === true){
+  //     setAuth(true);
+  //   }else{
+  //     setAuth(false);
+  //   }
+  // });
 }
 
 function AdminLayot() {

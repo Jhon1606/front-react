@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
-import { checkAuthToken, login } from '../api/auth';
+import React, { useEffect, useState } from 'react';
+import { login } from '../api/auth';
 import {useForm} from '../hooks/useForm';
 
 import '../css/Login.css';
+import { useNavigate } from 'react-router-dom';
+import { token } from '../config';
 
 function Login() {
     
+    let navigate = useNavigate();
+    useEffect(() => {
+      if (token){
+        return navigate("/");
+      }
+   });
+
     const {form, changed} = useForm({});
     const [message, setMessage] = useState('');
-    
-    checkAuthToken().then(data => {
-        if(data.authorization === true){
-            window.location.href = '/'
-        }
-      });
 
     const submitLoginForm = (e) => {
         e.preventDefault()

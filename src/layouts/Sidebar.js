@@ -1,9 +1,15 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link } from 'react-router-dom'
 import '../css/Sb-admin-2.css'
 import '../css/Sb-admin-2.min.css'
 
 function Sidebar() {
+
+  const logout = () => {
+    window.localStorage.removeItem('token');
+    window.location.href = '/login'
+  }
+    
   return (
     <>
         <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
@@ -24,24 +30,18 @@ function Sidebar() {
             </li>
             <li className="nav-item">
                 <Link to={'/cursos'} className="nav-link">
-                    <i class="fa fa-book"></i>
+                    <i className="fa fa-book"></i>
                     <span>Cursos</span>
                 </Link>           
             </li>
             <li className="nav-item">
                 <Link to={'/profesores'} className="nav-link">
-                    <i class="fa fa-user"></i>
+                    <i className="fa fa-user"></i>
                     <span>Profesores</span>
                 </Link>           
             </li>
-            <li className="nav-item">
-                <Link to={'/asignaciones'} className="nav-link">
-                    <i class="fa fa-paperclip"></i>
-                    <span>Asignación</span>
-                </Link>           
-            </li>
 
-            <button className="btn btn-danger m-2" type="button">Cerrar Sesión</button>
+            <button className="btn btn-danger m-2" type="button" onClick={logout}>Cerrar Sesión</button>
         </ul>
     </>
   )

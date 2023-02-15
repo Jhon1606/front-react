@@ -2,11 +2,14 @@ import { createBrowserRouter } from "react-router-dom";
 import App from "../layouts/App";
 import Error404 from "../pages/Error404";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
-import Index from "../pages/cursos";
-import { index } from "../api/cursos";
-import Create from "../pages/cursos/create";
 import IndexTeachers from "../pages/profesores";
+import Home from "../pages/Home";
+
+//Courses pages
+import Edit from "../pages/cursos/edit";
+import Index from "../pages/cursos";
+import Create from "../pages/cursos/create";
+import EditTeacher from "../pages/profesores/edit";
 
 export const routes = createBrowserRouter([
     {
@@ -21,32 +24,26 @@ export const routes = createBrowserRouter([
             {
                 path: '/cursos',
                 element: <Index/>,
-                loader: index,
             },
             {
                 path: '/cursos/crear',
                 element: <Create/>,
-                loader: index,
             },
             {
                 path: '/cursos/editar/:id',
-                element: <Create/>,
-                loader: index,
+                element: <Edit />,
             },
             {
                 path: '/profesores',
                 element: <IndexTeachers/>,
-                // loader: IndexTeachers
             },
             {
                 path: '/profesores/crear',
                 element: <Create/>,
-                loader: index,
             },
             {
                 path: '/profesores/editar/:id',
-                element: <Create/>,
-                loader: index,
+                element: <EditTeacher/>,
             },
             {
                 path: '/asignaciones',

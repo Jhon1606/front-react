@@ -10,7 +10,7 @@ export const login = async (data) => {
     
     if(result.status === 200){
         localStorage.setItem('token', result.token);
-        window.location.href = '/'
+        return window.location.replace('/');
     }
 
     return result.message;
